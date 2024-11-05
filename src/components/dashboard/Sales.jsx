@@ -1,19 +1,19 @@
 import React from "react";
 import HeadTitle from "./HeadTitle";
-import { Icons } from "../../assets/icons";
-import { SALES_LISTS } from "../arrayLists/menuLists";
+import { Icons } from "./../../assets/icons";
+import { SALES_LISTS } from "./../arrayLists/menuLists";
 
 const Sales = () => {
   return (
     <div className="block-wrap">
       <div className="block-head flex items-center justify-between">
-        <HeadTitle title="Today's sales" />
+        <HeadTitle title="Today's Sales" />
         <div className="block-head-export">
-          <button className="export-btn flex items-center gap-[6px] border border-solid border-gtay-500 rounded-1g py-[2px] px-2 font-semibold">
+          <button className="export-btn flex items-center gap-[6px] border border-solid border-gray-500 rounded-lg py-[2px] px-2 font-semibold">
             <img
               src={Icons.ExportDark}
               alt="export"
-              className="inver-[1] brightness-[100%]"
+              className="invert-[1] brightness-[100%]"
             />
             <span className="text">Export</span>
           </button>
@@ -26,7 +26,7 @@ const Sales = () => {
             key={index}
             className="card-item rounded-md py-4 px-[18px] border border-gray-500"
           >
-            <div className="card-item-icon rounded-full w-11 h-11 flex item-center justify-center border border-gray-950 dark:border-gray-500">
+            <div className="card-item-icon rounded-full w-11 h-11 flex items-center justify-center border border-gray-950 dark:border-gray-500">
               <img
                 src={item.src}
                 alt={item.title}

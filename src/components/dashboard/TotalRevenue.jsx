@@ -5,7 +5,6 @@ import HeadTitle from "./HeadTitle";
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -15,7 +14,6 @@ import {
 } from "recharts";
 
 const formatYAxisLabel = (value) => `${value}k`;
-
 const formatTooltipValue = (value) => `${value} Sales`;
 
 const TotalRevenue = () => {
@@ -24,9 +22,9 @@ const TotalRevenue = () => {
 
   useEffect(() => {
     dispatch(fetchRevenue());
-  }, [dispatch]); //dispatch가 변경될 때 한번 실행
+  }, [dispatch]); // dispatch가 변경될 때 한번 실행
 
-  console.log(state);
+  // console.log(state);
 
   return (
     <div className="block-wrap mt-[14px]">
@@ -71,7 +69,7 @@ const TotalRevenue = () => {
             <YAxis
               tickCount={6}
               tickSize={0}
-              ticks={{
+              tick={{
                 fill: "#7b91b0",
                 fontSize: 14,
               }}
@@ -83,11 +81,10 @@ const TotalRevenue = () => {
               iconType="circle"
               iconSize={10}
               style={{ paddingTop: "10px" }}
-              className="bg-white"
             />
             <Bar
               dataKey="online"
-              fill="#0095ff"
+              fill="#8a0a8a"
               activeBar={false}
               isAnimationActive={false}
               radius={[4, 4, 0, 0]}
@@ -95,7 +92,7 @@ const TotalRevenue = () => {
             />
             <Bar
               dataKey="offline"
-              fill="#00e096"
+              fill="#FF1E9D"
               activeBar={false}
               isAnimationActive={false}
               radius={[4, 4, 0, 0]}

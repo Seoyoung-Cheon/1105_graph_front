@@ -15,11 +15,11 @@ import {
 import PropTypes from "prop-types";
 
 const formatLegendValue = (value) => {
-  return value.replace("_", " "); //_를 공백으로 변경
+  return value.replace("_", " "); // _를 공백으로 변경
 };
 
 const formatTooltipValue = (name, value) => {
-  return `${name.replace("_", " ")}: ${value}`;
+  return `${name.replace("_", " ")} : ${value}`;
 };
 
 const CustomTooltip = ({ payload }) => {
@@ -49,7 +49,7 @@ const Visitors = () => {
 
   useEffect(() => {
     dispatch(fetchVisitors());
-  }, [dispatch]); //dispatch가 변경될 때 한번 실행
+  }, [dispatch]); // dispatch가 변경될 때 한번 실행
 
   // console.log(state);
   return (
@@ -76,11 +76,12 @@ const Visitors = () => {
               dataKey="month"
               tickSize={0}
               axisLine={false}
-              padding={{ left: 20 }}
+              padding={{ left: 0 }}
               tick={({ payload, x, y, dy }) => (
                 <text
                   x={x}
                   y={y + 20}
+                  dy={dy}
                   fill="#777"
                   fontSize={14}
                   textAnchor="middle"
@@ -100,6 +101,7 @@ const Visitors = () => {
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend iconType="square" formatter={formatLegendValue} />
+
             <Line
               dot={false}
               type="basis"
